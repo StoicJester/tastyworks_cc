@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Symbol:</strong>
+  <%= @company.symbol %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @company.name %>
+</p>
+
+<p>
+  <strong>last_sale:</strong>
+  <%= @company.last_sale %>
+</p>
+
+<p>
+  <strong>market_cap:</strong>
+  <%= @company.market_cap %>
+</p>
+
+<p>
+  <strong>IPO_year:</strong>
+  <%= @company.IPO_year %>
+</p>
+
+<p>
+  <strong>Sector:</strong>
+  <%= @company.sector %>
+</p>
+
+<p>
+  <strong>Industry:</strong>
+  <%= @company.industry %>
+</p>
+
+<p>
+  <strong>Summaryquote:</strong>
+  <%= @company.summary_quote %>
+</p>
+
+<%= link_to 'Edit', edit_company_path(@company) %> |
+<%= link_to 'Back', companies_path %>
