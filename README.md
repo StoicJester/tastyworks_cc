@@ -6,6 +6,8 @@ application up and running.
 Things you may want to cover:
 
 * Ruby version
+ruby 2.4.0p0
+Rails 5.0.2
 
 * System dependencies
 
@@ -14,6 +16,7 @@ Things you may want to cover:
 * Database creation
 
 * Database initialization
+rake tastychallenge:insert_companies
 
 * How to run the test suite
 

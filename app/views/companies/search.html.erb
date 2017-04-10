@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Search</h1>
+
+<%= form_tag("", :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+<%= submit_tag "Search" %>
+<% end %>
+
+<br>
+
+<% unless @companies.empty? %>
+
+  <div class="table-block">
+    <% @companies.each do |company| %>
+      <a href="<%= company_history_path(company) %>" class="row-block">
+         <div class="cell-block"><%= company.symbol %></div>
+         <div class="cell-block"><%= company.name %></div>
+      </a>
+    <% end %>
+</div>
+
+<% else %>
+
+<p>No companies found using with criteria "<%= params[:search] %>".<br>Please try a different search term.</p>
+
+<% end %>

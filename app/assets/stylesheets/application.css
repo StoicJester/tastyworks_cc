@@ -13,3 +13,17 @@
  *= require_tree .
  *= require_self
  */
+
+.table-block {
+   display: table;
+}
+
+.row-block {
+   display: table-row;
+}
+
+.cell-block {
+   display: table-cell;
+   padding: 5px;
+   border: 1px solid black;
+}

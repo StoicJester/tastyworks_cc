@@ -7,6 +7,22 @@ class CompaniesController < ApplicationController
     @companies = Company.all
   end
 
+  def search
+   @companies = Company.none
+   if params[:search]
+      @companies = Company.search(params[:search]).order("name").limit(20)
+   end
+  end
+
+  #GET /companies/1/history
+  def history
+     set_company()
+     yahoo_client = YahooFinance::Client.new
+     @data = yahoo_client.historical_quotes(@company.symbol, { start_date: Time::now-(24*60*60*30), end_date: Time::now }).map { |e|
+        [e.trade_date, '%.3f' % ((e.close.to_f + e.open.to_f + e.high.to_f + e.low.to_f).to_f/4) ]  
+     } # 30 days worth of data
+  end
+
   # GET /companies/1
   # GET /companies/1.json
   def show

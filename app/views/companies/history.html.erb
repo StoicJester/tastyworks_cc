@@ -1,0 +1,8 @@
+<p id="notice"><%= notice %></p>
+
+<h2>
+  <%= @company.symbol %> - <%= @company.name %>
+</h2>
+<h3>Average Price for the last 30 days</h3>
+
+<%= line_chart @data, xtitle: "Date", ytitle: "Average Price" %>
