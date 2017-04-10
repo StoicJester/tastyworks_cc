@@ -1,27 +1,30 @@
-# README
+## README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Ruby version
+  * ruby 2.4.0p0
+  * Rails 5.0.2
 
-Things you may want to cover:
+### Installation
 
-* Ruby version
-ruby 2.4.0p0
-Rails 5.0.2
+Clone or download this repo.
 
-* System dependencies
+In order to get everything up and running, navigate to the project directory and start with the old `bundle install` in the command line to install the required gems.
 
-* Configuration
+Follow this with `rake db:migrate` to get the database set up with the right schema
 
-* Database creation
+In order to get all of the pertinent information into the database, a rake task has been crated, and can be called with `rake tastychallenge:insert_companies`. It  may take awhile for all the data to transfer.
 
-* Database initialization
-rake tastychallenge:insert_companies
+When the data transfer is complete, you should be all set to run `rails server`, which should get the site up and going.
 
-* How to run the test suite
+The site can then be accessed in a browser at http://localhost:3000/
 
-* Services (job queues, cache servers, search engines, etc.)
+#### Summary
 
-* Deployment instructions
-
-* ...
+1. Clone or download the repo.
+1. Navigate to the project directory in the command line
+1. Enter `bundle install` into the command line
+1. Enter `rake db:migrate` into the command line
+1. Enter `rake tastychallenge:insert_companies` into the command line
+1. Wait for the previous command to finish running. Maybe go get some coffee.
+1. Enter `rails server` into the command line
+1. Open http://localhost:3000/ in a browser of your choice (preferably Chrome)
